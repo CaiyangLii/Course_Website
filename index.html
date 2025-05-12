@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Warwick Summer Courses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+<div id="navigation">
+
+    <ul class="nav-links">
+        <li><a href="#Courses">Courses</a></li>
+        <li><a href="#category">Subjects</a></li>
+        <li><a href="#lecturers">lecturers</a></li>
+        <li><a href="#contact-map-wrapper">Contact Us</a></li>
+    </ul>
+
+
+<form id="nav-search" action="/search" method="get">
+    <input type="text" name="q" placeholder="Search…">
+</form>
+</div>
+
+</div>
+
+<div id="hero">
+    <img src="https://warwick.ac.uk/fac/sci/wmg/about/jjg_3226.jpeg" alt="Banner">
+    <div class="hero-title">
+    <h1>Warwick Summer Courses</h1>
+    </div>
+</div>
+
+
+    <div class="hero-subtext">
+    <h2>Welcome to the Warwick Summer School. The experience that will inspire your future.</h2>
+    <h3>Whether you are looking to boost your existing knowledge or would like to gain knowledge in a new area, we have a Summer
+    School course to suit you. With a range of subjects to choose from, you will interact with renowned academics and
+    high-profile guest speakers. The three-week course includes a combination of lectures, seminars, and study groups, with
+    an optional assessment.</h3>  
+    </div>
+
+    <div id="category">
+        <h2>Available Courses</h2>
+    
+        <div class="subject-chips">
+            <button data-filter="all" class="chip active">All</button>
+            <button data-filter="Technology" class="chip">Technology</button>
+            <button data-filter="Business" class="chip">Business</button>
+            <button data-filter="Academic" class="chip">Academic</button>
+            <button data-filter="Finance" class="chip">Finance</button>
+            <button data-filter="Statistics" class="chip">Statistics</button>
+        </div>
+    </div>
+
+<div id="Courses">
+    <div id="featured-courses-container">
+        {% for course in courses %}
+        <div class="courses">
+            <h3>{{ course.title }}</h3>
+            <p><strong>Subject:</strong> {{ course.category }}</p>
+            <p><strong>Start Date:</strong> {{ course.start_date }}</p>
+            <a href="/course/{{ course.id }}" class="btn">Book Now</a>
+        </div>
+        {% endfor %}
+    </div>
+
+<div id="lecturers">
+    <h2>Meet Our Lecturers</h2>
+
+    <div class="lect-grid">
+        {% set lect_list = lecturers.items() | list %}
+        {% for name, info in lect_list[:3] %}
+        <div class="lect-card">
+            <div class="lect-info">
+                <h3>{{ name }}</h3>
+                <p>{{ info.bio }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div id="contact-map-wrapper">
+    <div id="contact">
+    <h2>Contact Us</h2>
+    <p>📧 <strong>Email:</strong> shortcourses@warwick.ac.uk</p>
+    <p>📞 <strong>Phone:</strong> +44 (0)24 7688 3923</p>
+    <p>🏫 <strong>Address:</strong> University of Warwick, Coventry, CV4 7AL, UK</p>
+    </div>
+
+    <div id="map">
+    <h2>Our Location</h2>
+    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.5126841412384!2d-1.5640453239791055!3d52.37925574664119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48774ac696d53ee5%3A0xaa928d75708b2b54!2sUniversity%20of%20Warwick!5e0!3m2!1sen!2suk!4v1746788884598!5m2!1sen!2suk" 
+    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        
+    </iframe>
+    </div>
+</div>
+    <div id="footer">
+        <p>&copy; 2025 University of Warwick. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

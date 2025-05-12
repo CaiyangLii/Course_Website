@@ -1,0 +1,352 @@
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #222;
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#hero {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+#hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  display: block;
+}
+
+.hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem; 
+  line-height: 1.2;
+}
+
+.hero-subtext{
+  background:#ffffff;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  padding:24px 32px;
+  margin:16px 0 24px;      /* 上 16 下 24 */
+}
+
+.hero-subtext h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0px;
+}
+
+.hero-subtext h3 {
+  font-size: 1rem;
+  color: #666;
+  font-weight: normal;
+}
+
+/* Navigation */
+#navigation{
+  position:sticky;           
+  top:0;
+  z-index:1000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:#0b2a53;
+  padding:8px 24px;
+  border-radius:8px;
+  margin-bottom:16px;
+}
+
+#navigation .nav-links{
+  display:flex;
+  gap:24px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+#navigation .nav-links a{
+  color:#fff;
+  font-size:1.25rem;
+  font-weight:600;
+  text-decoration:none;
+}
+
+#nav-search input{
+  width:200px;
+  padding:6px 10px;
+  border:none;
+  border-radius:4px;
+  font-size:1rem;
+}
+
+@media(max-width:768px){
+  #navigation{flex-direction:column;gap:10px;}
+  #nav-search input{width:100%;}
+}
+
+/* Hero Section */
+
+#hero h3 {
+  text-align: center;
+  margin: 10px 0 20px;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+/* Section Headings */
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 20px 0 10px;
+  color: #1a1a1a;
+}
+
+/* Featured Courses */
+#featured-courses-container
+ {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+ }
+
+.courses {
+  width: calc(33.333% - 14px);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* Courses by Subject */
+#category {
+  background-color: #2e3b55; 
+  color: #ffffff;            
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#category h2 {
+  color: #ffffff; 
+  margin-bottom: 10px;
+}
+
+#category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+  color: #ffffff;
+}
+#category strong {
+  color: #ffffff;
+  font-weight: 900;
+  min-width: 120px;
+}
+
+#category li {
+  font-weight: normal;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+
+/* Lecturers section */
+#lecturers {
+  background-color: #ffffff;
+  color: #222;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.lecturer-card {
+  margin-bottom: 20px;
+}
+
+.lecturer-card h3 {
+  color: #0b2a53;
+  margin-bottom: 5px;
+}
+
+.lecturer-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+/* Category and Deals Side-by-side */
+#contact-map-wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#contact,
+#map {
+  flex: 1;
+  min-width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Footer */
+#footer {
+  background-color: #0b2a53;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+/* Common Elements */
+p,
+ul,
+li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  #featured-courses-container {
+    flex-direction: column;
+  }
+
+  .courses {
+    width: 100%;
+  }
+
+  #categories-deals-wrapper {
+    flex-direction: column;
+  }
+
+  #categories,
+  #deals {
+    width: 100%;
+  }
+}
+
+/* Book Now*/
+.courses .btn,    
+.btn-book {
+  display:inline-block;
+  background:#0b2a53;      
+  color:#ffffff;
+  padding:8px 20px;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.2s background, .2s transform;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+
+.courses .btn:hover,
+.btn-book:hover {
+  background:#143d7a;       
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+/* Chips */
+.subject-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  justify-content:center;
+  margin-top:20px;
+}
+
+/* Chip */
+.chip{
+  background:#fff;
+  color:#0b2a53;
+  border:2px solid #0b2a53;
+  padding:6px 16px;
+  font-size:.9rem;
+  font-weight:600;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.2s background,.2s color;
+}
+.chip:hover,
+.chip.active{
+  background:#0b2a53;
+  color:#fff;
+}
+
+.lect-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+
+/* Card */
+.lect-card {
+  background: #2f3643;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform .25s, box-shadow .25s;
+}
+.lect-info {
+  padding: 24px;
+  color: #dee3ea;
+  text-align: left;
+}
+
+
+.lect-info h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 0 0 12px;
+}
+
+.lect-info p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
